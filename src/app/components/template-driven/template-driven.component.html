@@ -1,0 +1,53 @@
+<div class="container">
+    <h2>Template Driven Form</h2>
+    <h2>User Registeration Form</h2>
+    <form #userFrom="ngForm" (ngSubmit)="formSubmitted(userFrom)">
+        <table>
+        <tr>
+            <td>Name</td>
+            <td>
+                <input type="text" placeholder="enter here" name="name" ngModel>
+            </td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>
+                <input type="email" placeholder="enter email" name="email" ngModel>
+            </td>
+        </tr>
+        <tr>
+            <td>About</td>
+            <td>
+                <textarea name="about" id="" cols="21" rows="4" placeholder="enter here" ngModel></textarea>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Gender</td>
+            <td>
+                <input type="radio" name="gender" value="male" ngModel/> Male
+                <input type="radio" name="gender" value="female" ngModel /> Female
+            </td>
+        </tr>
+
+        <tr>
+            <td>City</td>
+            <td>
+                <select name="city" id="" ngModel>
+                    <option value="lucknoe">Lucknow</option>
+                    <option value="london">London</option>
+                    <option value="newyork">NewYork</option>
+                    <option value="lasvegas">LasVegas</option>
+                    <option value="edinburg">Edinburg</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit">Submit</button>
+                <button type="reset">Clear</button>
+            </td> 
+        </tr>
+    </table>
+    </form>
+</div>

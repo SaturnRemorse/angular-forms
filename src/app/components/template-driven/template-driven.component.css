@@ -1,0 +1,23 @@
+.container{
+    width: 80%;
+    margin: auto;
+    background-color: aquamarine;
+    padding: 20px;
+    text-align: center;
+}
+
+table{
+    margin: auto;
+}
+
+table tr td, input, textarea, select{
+    padding: 5px;
+    font-size: 20px;
+
+}
+
+button{
+    margin: 2px;
+    font-size: 20px;
+}
+
