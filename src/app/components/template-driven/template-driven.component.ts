@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { User } from '../../models/User';
 
@@ -8,9 +8,18 @@ import { User } from '../../models/User';
   templateUrl: './template-driven.component.html',
   styleUrl: './template-driven.component.css'
 })
-export class TemplateDrivenComponent {
+export class TemplateDrivenComponent implements OnInit{
+  
 
+  @ViewChild("userForm", {static: true}) userForm: NgForm | undefined;
   user = new User("tohsaka", "tohsake@gmail.com", "Hi I am tohsaka rin, I have an archer.", "female", "lucknow");
+
+  ngOnInit(): void {
+    this.user.name="max verstappen";
+    setTimeout(()=>{
+      this.userForm?.setValue(this.user);
+    },2000);
+  }
 
   formSubmitted(userForm: NgForm){
     console.log("Form submitted");
