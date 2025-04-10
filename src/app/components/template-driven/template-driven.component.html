@@ -1,7 +1,7 @@
 <div class="container">
     <h2>Template Driven Form</h2>
     <h2>User Registeration Form</h2>
-    <form #userFrom="ngForm" (ngSubmit)="formSubmitted(userFrom)">
+    <form #userForm="ngForm" (ngSubmit)="formSubmitted(userForm)">
         <table>
         <tr>
             <td>Name</td>
@@ -12,7 +12,8 @@
         <tr>
             <td>Email</td>
             <td>
-                <input type="email" placeholder="enter email" name="email" ngModel>
+                <input type="email" placeholder="enter email" name="email" ngModel #emailField="ngModel">
+                <p>{{emailField.valid}}</p>
             </td>
         </tr>
         <tr>
@@ -44,10 +45,18 @@
         </tr>
         <tr>
             <td colspan="2">
-                <button type="submit">Submit</button>
+                <button *ngIf="!userForm.submitted" type="submit">Submit</button>
                 <button type="reset">Clear</button>
             </td> 
         </tr>
     </table>
+    <div class="form-details">
+    <h2>form details:</h2>
+    <p>values: {{userForm.value | json}}</p>
+    <p>valid: {{userForm.valid}}</p>
+    <p>dirty: {{userForm.dirty}}</p>
+    <p>touched: {{userForm.touched}}</p>
+    <p>submitted: {{userForm.submitted}}</p>
+</div>
     </form>
 </div>
