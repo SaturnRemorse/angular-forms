@@ -6,36 +6,36 @@
         <tr>
             <td>Name</td>
             <td>
-                <input type="text" placeholder="enter here" name="name" ngModel>
+                <input type="text" placeholder="enter here" name="name"  [(ngModel)]="user.name">
             </td>
         </tr>
         <tr>
             <td>Email</td>
             <td>
-                <input type="email" placeholder="enter email" name="email" ngModel #emailField="ngModel">
-                <p>{{emailField.valid}}</p>
+                <input type="email" placeholder="enter email" name="email"  [(ngModel)]="user.email">
+                <!-- <p>{{emailField.valid}}</p> -->
             </td>
         </tr>
         <tr>
             <td>About</td>
             <td>
-                <textarea name="about" id="" cols="21" rows="4" placeholder="enter here" ngModel></textarea>
+                <textarea name="about" id="" cols="21" rows="4" placeholder="enter here" [(ngModel)]="user.about"></textarea>
             </td>
         </tr>
 
         <tr>
             <td>Gender</td>
             <td>
-                <input type="radio" name="gender" value="male" ngModel/> Male
-                <input type="radio" name="gender" value="female" ngModel /> Female
+                <input type="radio" name="gender" value="male"  [(ngModel)]="user.gender"/> Male
+                <input type="radio" name="gender" value="female" [(ngModel)]="user.gender"/> Female
             </td>
         </tr>
 
         <tr>
             <td>City</td>
             <td>
-                <select name="city" id="" ngModel>
-                    <option value="lucknoe">Lucknow</option>
+                <select name="city" id="" [(ngModel)]="user.city">
+                    <option value="lucknow">Lucknow</option>
                     <option value="london">London</option>
                     <option value="newyork">NewYork</option>
                     <option value="lasvegas">LasVegas</option>
